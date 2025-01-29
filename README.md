@@ -1,27 +1,28 @@
-# Biblioteca
+# Proyecto Angular 18
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Este es un proyecto de **Angular 18** diseñado para [gestionar una biblioteca]. Este proyecto usa las últimas tecnologías y buenas prácticas en el desarrollo frontend para ofrecer una experiencia de usuario rápida, escalable y moderna.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para comenzar con el proyecto, sigue estos pasos:
+- Requerimientos
+  angular/cli => 18
+  node => 18
 
-## Code scaffolding
+- Clona el repositorio:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```bash
+   git clone https://github.com/luisliconte/bibliotecaFront.git
+   ```
+ -  Navega al directorio del proyecto:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   cd bibliotecaFront
+- Instala las dependencias del proyecto:
+    ```bash
+    npm install
+    ```
+- Iniciar el servidor:
+    ```bash
+    ng serve
+    ```
+- El servidor se iniciará en http://localhost:4200/ por defecto.
