@@ -6,7 +6,9 @@ Este es un proyecto de **Angular 18** diseñado para [gestionar una biblioteca].
 
 Para comenzar con el proyecto, sigue estos pasos:
 - Requerimientos
+
   angular/cli => 18
+  
   node => 18
 
 - Clona el repositorio:
