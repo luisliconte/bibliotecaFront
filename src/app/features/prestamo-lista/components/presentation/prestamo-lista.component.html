@@ -1,0 +1,62 @@
+<div class="table-container container-fluid">
+  <div class="mt-2">
+    <div class="d-flex justify-content-between">
+      <h4 class="fw-bold">Lista de Prestamo</h4>
+      <button type="button" class="btn btn-primary" (click)="accion(0, '')">Nuevo Prestamo</button>
+    </div>
+  </div>
+  <hr>
+  <mat-form-field style="width: 40%;">
+    <mat-label>Filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="prestamoData" matSort class="mat-elevation-z8">
+    <!-- idPrestamo -->
+    <ng-container matColumnDef="idPrestamo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Prestamo </th>
+      <td mat-cell *matCellDef="let row"> {{ row.idPrestamo }} </td>
+    </ng-container>
+
+    <!-- tituloLibro -->
+    <ng-container matColumnDef="tituloLibro">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Libro </th>
+      <td mat-cell *matCellDef="let row"> {{ row.tituloLibro }} </td>
+    </ng-container>
+
+    <!-- estado -->
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+      <td mat-cell *matCellDef="let row"> {{ row.estado }} </td>
+    </ng-container>
+
+    <!-- fechaPrestamo -->
+    <ng-container matColumnDef="fechaPrestamo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Prestamo </th>
+      <td mat-cell *matCellDef="let row"> {{ row.fechaPrestamo | date: 'shortDate' }} </td>
+    </ng-container>
+
+    <!-- fechaDevolucion -->
+    <ng-container matColumnDef="fechaDevolucion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Devolucion </th>
+      <td mat-cell *matCellDef="let row"> {{ row.fechaDevolucion | date: 'shortDate' }} </td>
+    </ng-container>
+
+    <!-- Acciones -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="accion(row.idPrestamo, 'editar')">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn"
+          (click)="accion(row.idPrestamo, 'eliminar')">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>

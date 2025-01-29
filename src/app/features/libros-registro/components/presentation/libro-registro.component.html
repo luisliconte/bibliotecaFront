@@ -1,0 +1,43 @@
+<h1 class="m-2 fw-bold">Registrar libro</h1>
+<hr>
+<form [formGroup]="this.libroComunicaion.libroForm" (ngSubmit)="onSubmit()" class="m-4">
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="titulo" />
+      <mat-error *ngIf="libroComunicaion.libroForm.get('titulo')?.hasError('required')">El título es obligatorio</mat-error>
+      <mat-error *ngIf="libroComunicaion.libroForm.get('titulo')?.hasError('maxlength')">Máximo 100 caracteres</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>Autor</mat-label>
+      <input matInput formControlName="idAutor" type="number" />
+      <mat-error *ngIf="libroComunicaion.libroForm.get('idAutor')?.hasError('required')">El autor es obligatorio</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>ISBN</mat-label>
+      <input matInput formControlName="isbn" />
+      <mat-error *ngIf="libroComunicaion.libroForm.get('isbn')?.hasError('required')">El ISBN es obligatorio</mat-error>
+      <mat-error *ngIf="libroComunicaion.libroForm.get('isbn')?.hasError('pattern')">Debe ser un ISBN válido (13 dígitos)</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha de Publicación</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaPublicacion">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="libroComunicaion.libroForm.get('fechaPublicacion')?.hasError('required')">La fecha es obligatoria</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>Estado</mat-label>
+      <input matInput formControlName="idEstado" type="number" />
+      <mat-error *ngIf="libroComunicaion.libroForm.get('idEstado')?.hasError('required')">El estado es obligatorio</mat-error>
+    </mat-form-field>
+<div class="text-center">
+    <button mat-raised-button color="primary" class="mt-4" [disabled]="libroComunicaion.libroForm.invalid">
+      <mat-icon>save</mat-icon>
+      Guardar
+    </button>
+  </div>
+  </form>

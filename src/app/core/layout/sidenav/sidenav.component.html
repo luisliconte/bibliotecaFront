@@ -1,0 +1,22 @@
+<mat-sidenav-container class="mat-sidenav-container">
+  <mat-sidenav #drawer mode="side" opened class="mat-sidenav">
+    <h3>Menú</h3>
+    <hr>
+    <a routerLink="/libro" routerLinkActive="active">Lista de Libro</a>
+    <a routerLink="/autor" routerLinkActive="active">Lista de autor</a>
+    <a routerLink="/prestamo" routerLinkActive="active">Lista de prestamo</a>
+  </mat-sidenav>
+
+  <mat-toolbar>
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <div>BIBLIOTECA</div>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

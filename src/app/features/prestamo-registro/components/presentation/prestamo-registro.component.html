@@ -1,0 +1,38 @@
+<h1 class="m-2 fw-bold">Registrar Prestamo</h1>
+<hr>
+<form [formGroup]="this.prestamoComunicaion.prestamoForm" (ngSubmit)="onSubmit()" class="m-4">
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>idLibro</mat-label>
+      <input matInput formControlName="idLibro" type="number"/>
+      <mat-error *ngIf="prestamoComunicaion.prestamoForm.get('idLibro')?.hasError('required')">El idLibro es obligatorio</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full p-2">
+      <mat-label>idEstado</mat-label>
+      <input matInput formControlName="idEstado" type="number" />
+      <mat-error *ngIf="prestamoComunicaion.prestamoForm.get('idEstado')?.hasError('required')">El idEstado es obligatorio</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha Prestamo</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaPrestamo">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="prestamoComunicaion.prestamoForm.get('fechaPrestamo')?.hasError('required')">La fecha es obligatoria</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha Devolucion</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="fechaDevolucion">
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+      <mat-error *ngIf="prestamoComunicaion.prestamoForm.get('fechaDevolucion')?.hasError('required')">La fecha es obligatoria</mat-error>
+    </mat-form-field>
+
+<div class="text-center">
+    <button mat-raised-button color="primary" class="mt-4" [disabled]="prestamoComunicaion.prestamoForm.invalid">
+      <mat-icon>save</mat-icon>
+      Guardar
+    </button>
+  </div>
+  </form>
