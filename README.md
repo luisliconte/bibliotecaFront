@@ -5,10 +5,10 @@ Este es un proyecto de **Angular 18** diseñado para [gestionar una biblioteca].
 ## Instalación
 
 Para comenzar con el proyecto, sigue estos pasos:
-- Requerimientos
+- Requerimientos:
 
   angular/cli => 18
-  
+
   node => 18
 
 - Clona el repositorio:
@@ -16,6 +16,10 @@ Para comenzar con el proyecto, sigue estos pasos:
    ```bash
    git clone https://github.com/luisliconte/bibliotecaFront.git
    ```
+- La rama que deben de utilizar es la siguiente: 
+
+    feature/bibliotecaV1
+
  -  Navega al directorio del proyecto:
 
    cd bibliotecaFront
